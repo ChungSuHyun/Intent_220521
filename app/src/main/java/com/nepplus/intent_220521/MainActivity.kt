@@ -9,7 +9,7 @@ import java.lang.ref.ReferenceQueue
 class MainActivity : AppCompatActivity() {
 
 //    1000이라는 숫자가, 닉네임을 가지러 가는거다. 구별하기
-    val REQ_Nickname = 1000
+    val REQ_CODE_NICKNAME = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +40,30 @@ class MainActivity : AppCompatActivity() {
 
         val myIntent = Intent (this, EditNicknameActivity::class.java)
 
-        startActivityForResult( myIntent,REQ_Nickname
-        )
+        startActivityForResult( myIntent,REQ_CODE_NICKNAME )
 
     }
 
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+//        다른화면에서 결과를 받아서 돌아오면, 종류와 무관하게 무조건 실행되는 코드 영역 (함수)
+
+//        닉네임을 받으러 다녀온게 맞는지? => 대처방안만 코딩
+
+        if (requestCode == REQ_CODE_NICKNAME ) {
+
+//            확인 버튼을 누른게 맞는지?
+
+            if (resultCode == RESULT_OK ) {
+
+//                닉네임변경 OK, 확인도 OK => 첨부된 닉네임 추출 > UI에 반영
+
+                val newNickname = data?.getStringExtra("nick")
+                txtNickname.text = newNickname
+            }
+        }
+    }
 
 }
