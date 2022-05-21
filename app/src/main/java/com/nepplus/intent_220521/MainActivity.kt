@@ -4,8 +4,13 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
+import java.lang.ref.ReferenceQueue
 
 class MainActivity : AppCompatActivity() {
+
+//    1000이라는 숫자가, 닉네임을 가지러 가는거다. 구별하기
+    val ReferenceQueue = 1000
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
