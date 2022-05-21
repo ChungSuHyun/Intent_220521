@@ -20,5 +20,6 @@ class OtherActivity : AppCompatActivity() {
 
             finish()
 //        }
+        }
     }
 }
