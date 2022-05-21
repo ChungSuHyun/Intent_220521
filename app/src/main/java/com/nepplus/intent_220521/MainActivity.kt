@@ -9,7 +9,7 @@ import java.lang.ref.ReferenceQueue
 class MainActivity : AppCompatActivity() {
 
 //    1000이라는 숫자가, 닉네임을 가지러 가는거다. 구별하기
-    val ReferenceQueue = 1000
+    val REQ_Nickname = 1000
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,7 +40,8 @@ class MainActivity : AppCompatActivity() {
 
         val myIntent = Intent (this, EditNicknameActivity::class.java)
 
-        startActivityForResult( myIntent, 1000)
+        startActivityForResult( myIntent,REQ_Nickname
+        )
 
     }
 
