@@ -1,5 +1,6 @@
 package com.nepplus.intent_220521
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_edit_nickname.*
@@ -18,7 +19,7 @@ class EditNicknameActivity : AppCompatActivity() {
 
 //            2. 화면을 이동하는 길에 > 데이터 첨부 : Intent / putExtra 활용
 
-            val resultIntent = Intent( ) // 데이터를 첨부하기 위한 용도. 출발/도착지 알려주는 목적 없다.
+            val resultIntent = Intent() // 데이터를 첨부하기 위한 용도. 출발/도착지 알려주는 목적 없다.
 
             resultIntent.putExtra("nick", inputNickname)
 
