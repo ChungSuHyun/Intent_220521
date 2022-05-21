@@ -33,6 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        val myIntent = Intent (this, EditNicknameActivity::class.java)
+
+        startActivityForResult( myIntent, 1000)
+
     }
 
 
